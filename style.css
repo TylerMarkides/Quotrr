@@ -1,11 +1,11 @@
-/* --- General Setup & Variables --- */
+ --- General Setup & Variables --- */
 :root {
     --main-blue: #2274fc;
-    --dark-bg: #0f172a;
-    --dark-card: #1e293b;
-    --text-light: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
+    --light-bg: #ffffff;
+    --light-card: #ffffff; /* Changed to white */
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
 }
 
 * {
@@ -16,8 +16,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -36,6 +36,7 @@ h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
+    color: var(--text-dark);
 }
 
 section {
@@ -61,16 +62,17 @@ section {
 .btn-primary:hover {
     opacity: 0.9;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(34, 116, 252, 0.3);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--text-light);
+    color: var(--text-dark);
     border-color: var(--border-color);
 }
 
 .btn-secondary:hover {
-    background-color: var(--dark-card);
+    background-color: #f8fafc; /* Keep a slight hover effect */
 }
 
 .btn-large {
@@ -82,6 +84,7 @@ section {
 .main-header {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
+    background-color: var(--light-bg);
 }
 
 .main-nav {
@@ -90,11 +93,9 @@ section {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-light);
-    text-decoration: none;
+.logo img {
+    height: 25px; /* Made logo much smaller */
+    width: auto;
 }
 
 .nav-links {
@@ -106,11 +107,12 @@ section {
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--text-light);
+    color: var(--main-blue);
 }
 
 .nav-actions {
@@ -121,17 +123,19 @@ section {
 /* --- Hero Section --- */
 .hero-section {
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     max-width: 800px;
     margin: 0 auto;
+    color: var(--text-dark);
 }
 
 .hero-content .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
     max-width: 700px;
     margin: 1.5rem auto 2.5rem;
@@ -149,28 +153,20 @@ section {
     padding: 0.8rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    background-color: var(--dark-card);
-    color: var(--text-light);
+    background-color: var(--light-bg);
+    color: var(--text-dark);
     font-size: 1rem;
 }
 
-.hero-image-placeholder {
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    margin: 2rem auto 0;
-    background-color: #000;
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    font-weight: 700;
-    color: #fff;
+.hero-form input::placeholder {
+    color: var(--text-muted);
 }
 
-/* --- Magic Section --- */
+/* --- How It Works Section --- */
+.magic-section {
+    background-color: var(--light-card);
+}
+
 .magic-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -179,15 +175,17 @@ section {
 }
 
 .step {
-    background-color: var(--dark-card);
+    background-color: var(--light-bg);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .step h3 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    color: var(--text-dark);
 }
 
 .step p {
@@ -200,6 +198,10 @@ section {
     align-items: center;
     gap: 4rem;
     margin-bottom: 6rem;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
 }
 
 .feature-item.reverse {
@@ -227,9 +229,14 @@ section {
 .feature-image img {
     width: 100%;
     border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
 
 /* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: var(--light-card);
+}
+
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -237,7 +244,7 @@ section {
 }
 
 .testimonial-card {
-    background-color: var(--dark-card);
+    background-color: var(--light-bg);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
@@ -246,7 +253,7 @@ section {
 .testimonial-card .author {
     margin-top: 1.5rem;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-dark);
 }
 
 /* --- FAQ Section --- */
@@ -256,7 +263,7 @@ section {
 }
 
 .faq-item {
-    background-color: var(--dark-card);
+    background-color: var(--light-bg);
     border-radius: 8px;
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
@@ -276,6 +283,7 @@ section {
     font-size: 1.5rem;
     font-weight: 400;
     transition: transform 0.3s ease;
+    color: var(--main-blue);
 }
 
 .faq-answer {
@@ -300,31 +308,34 @@ section {
 
 /* --- Final CTA Section --- */
 .cta-section {
-    background-color: var(--dark-card);
+    background-color: var(--text-dark);
     text-align: center;
 }
 
 .cta-section h2 {
+    color: var(--light-bg);
     margin-bottom: 2rem;
 }
 
 /* --- Footer --- */
 .main-footer {
     padding: 4rem 0 2rem;
-    background-color: #000;
+    background-color: var(--light-card);
     border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
 .footer-col h3 {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
 .footer-col ul {
@@ -335,13 +346,13 @@ section {
     margin-bottom: 0.5rem;
 }
 
-.footer-col a {
+.footer-col a, .footer-col p {
     color: var(--text-muted);
     text-decoration: none;
 }
 
 .footer-col a:hover {
-    color: var(--text-light);
+    color: var(--main-blue);
 }
 
 .footer-bottom {
@@ -359,9 +370,13 @@ section {
     .feature-item {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
     }
     .feature-item.reverse {
         flex-direction: column;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -377,5 +392,8 @@ section {
     .hero-form input {
         width: 100%;
         max-width: 400px;
+    }
+    .footer-grid {
+        text-align: center;
     }
 }
