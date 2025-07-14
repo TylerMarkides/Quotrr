@@ -1,399 +1,205 @@
- --- General Setup & Variables --- */
-:root {
-    --main-blue: #2274fc;
-    --light-bg: #ffffff;
-    --light-card: #ffffff; /* Changed to white */
-    --text-dark: #1e293b;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotrr - Smart Quoting for Service Businesses</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="#" class="logo">
+                    <img src="https://ik.imagekit.io/4xntngxeg/Quotrr%20(1).png?updatedAt=1752338505979" alt="Quotrr Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Features</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="btn btn-secondary">Sign In</a>
+                    <a href="#" class="btn btn-primary">Get Started Free</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light-bg);
-    color: var(--text-dark);
-    line-height: 1.6;
-}
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Smart quoting for service-based businesses.</h1>
+                    <p class="subtitle">Quotrr uses AI to instantly turn your customer's request into a professional, accurate quote, sent directly to their inbox. Save time, win more jobs.</p>
+                    <form class="hero-form">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit" class="btn btn-primary">Start Quoting Smarter</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+        <section class="magic-section">
+            <div class="container">
+                <h2>Quoting, simplified.</h2>
+                <div class="magic-steps">
+                    <div class="step">
+                        <h3>1. Customer Describes Need</h3>
+                        <p>Your customer types what they need in their own words, or uses the simple step-by-step builder.</p>
+                    </div>
+                    <div class="step">
+                        <h3>2. AI Matches Services</h3>
+                        <p>Our AI instantly analyzes the request and matches it to your specific services and pricing.</p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Instant Quote Generated</h3>
+                        <p>A clear, professional quote is created and automatically emailed to both you and the customer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-h1, h2, h3 {
-    line-height: 1.2;
-    font-weight: 600;
-}
+        <section class="features-section">
+            <div class="container">
+                <h2>Everything you need to quote faster.</h2>
+                <div class="feature-item">
+                    <div class="feature-text">
+                        <h3>AI-Powered Request Analysis</h3>
+                        <p>Let your customers speak their language. Our AI understands natural language requests and accurately maps them to your services, eliminating guesswork.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://placehold.co/500x300/e2e8f0/475569?text=AI+Matching" alt="AI-Powered Matching">
+                    </div>
+                </div>
+                <div class="feature-item reverse">
+                    <div class="feature-text">
+                        <h3>Automated Email Quotes</h3>
+                        <p>The moment a quote is generated, it's professionally formatted and sent to both you and your customer, ensuring rapid response times and a seamless experience.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://placehold.co/500x300/e2e8f0/475569?text=Email+Automation" alt="Automated Emails">
+                    </div>
+                </div>
+                 <div class="feature-item">
+                    <div class="feature-text">
+                        <h3>Guided Manual Quoting</h3>
+                        <p>For complex jobs or customers who prefer a structured process, our manual option provides a step-by-step list to build a detailed and accurate quote.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="https://placehold.co/500x300/e2e8f0/475569?text=Manual+Builder" alt="Manual Quote Builder">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-dark);
-}
+        <section class="testimonials-section">
+            <div class="container">
+                <h2>Why businesses love Quotrr</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Quotrr has cut my admin time in half. I can send quotes from my phone in minutes instead of hours at a desk. It's been a total game-changer for my plumbing business."</p>
+                        <div class="author">- John D., Plumber</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The AI is surprisingly accurate. Customers get instant, professional quotes, which has massively improved our conversion rate. We look more professional and win more jobs."</p>
+                        <div class="author">- Maria G., Landscaping Services</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"I love that it gives customers two ways to get a quote. Some use the AI, some use the builder. It's flexible and has made our quoting process so much more efficient."</p>
+                        <div class="author">- David L., Electrician</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-section {
-    padding: 6rem 0;
-}
+        <section class="faq-section">
+            <div class="container">
+                <h2>Have Questions?</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I customize my services and pricing?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. You have full control to add, edit, and price all of your services. The AI will learn from your specific offerings to provide accurate quotes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What kind of businesses is Quotrr for?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Quotrr is designed for any service-based business, from plumbers and electricians to cleaners, landscapers, consultants, and more. If you send quotes, Quotrr can help.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is there a free trial?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a free trial so you can experience the power of smart quoting for yourself. No credit card required to get started.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-/* --- Buttons --- */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
+        <section class="cta-section">
+            <div class="container">
+                <h2>Stop quoting. Start winning.</h2>
+                <a href="#" class="btn btn-primary btn-large">Get Started with Quotrr Free</a>
+            </div>
+        </section>
+    </main>
 
-.btn-primary {
-    background-color: var(--main-blue);
-    color: #fff;
-}
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                     <a href="#" class="logo">
+                        <img src="https://ik.imagekit.io/4xntngxeg/Quotrr%20(1).png?updatedAt=1752338505979" alt="Quotrr Logo">
+                    </a>
+                    <p>Smart quoting for service-based businesses.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> Quotrr. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-.btn-primary:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(34, 116, 252, 0.3);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-dark);
-    border-color: var(--border-color);
-}
-
-.btn-secondary:hover {
-    background-color: #f8fafc; /* Keep a slight hover effect */
-}
-
-.btn-large {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-}
-
-/* --- Header & Navigation --- */
-.main-header {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--light-bg);
-}
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    height: 25px; /* Made logo much smaller */
-    width: auto;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--main-blue);
-}
-
-.nav-actions {
-    display: flex;
-    gap: 1rem;
-}
-
-/* --- Hero Section --- */
-.hero-section {
-    text-align: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-    color: var(--text-dark);
-}
-
-.hero-content .subtitle {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 1.5rem auto 2.5rem;
-}
-
-.hero-form {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.hero-form input {
-    width: 300px;
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: var(--light-bg);
-    color: var(--text-dark);
-    font-size: 1rem;
-}
-
-.hero-form input::placeholder {
-    color: var(--text-muted);
-}
-
-/* --- How It Works Section --- */
-.magic-section {
-    background-color: var(--light-card);
-}
-
-.magic-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    text-align: center;
-}
-
-.step {
-    background-color: var(--light-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.step h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    color: var(--text-dark);
-}
-
-.step p {
-    color: var(--text-muted);
-}
-
-/* --- Features Section --- */
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    margin-bottom: 6rem;
-}
-
-.feature-item:last-child {
-    margin-bottom: 0;
-}
-
-.feature-item.reverse {
-    flex-direction: row-reverse;
-}
-
-.feature-text {
-    flex: 1;
-}
-
-.feature-text h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.feature-text p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-}
-
-.feature-image {
-    flex: 1;
-}
-
-.feature-image img {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-/* --- Testimonials Section --- */
-.testimonials-section {
-    background-color: var(--light-card);
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background-color: var(--light-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-.testimonial-card .author {
-    margin-top: 1.5rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-/* --- FAQ Section --- */
-.faq-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background-color: var(--light-bg);
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-}
-
-.faq-question {
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-icon {
-    font-size: 1.5rem;
-    font-weight: 400;
-    transition: transform 0.3s ease;
-    color: var(--main-blue);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-answer p {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--text-muted);
-}
-
-.faq-item.active .faq-answer {
-    max-height: 200px; /* Adjust if answers are longer */
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
-
-
-/* --- Final CTA Section --- */
-.cta-section {
-    background-color: var(--text-dark);
-    text-align: center;
-}
-
-.cta-section h2 {
-    color: var(--light-bg);
-    margin-bottom: 2rem;
-}
-
-/* --- Footer --- */
-.main-footer {
-    padding: 4rem 0 2rem;
-    background-color: var(--light-card);
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.footer-col h3 {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-col a, .footer-col p {
-    color: var(--text-muted);
-    text-decoration: none;
-}
-
-.footer-col a:hover {
-    color: var(--main-blue);
-}
-
-.footer-bottom {
-    text-align: center;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 992px) {
-    h1 { font-size: 2.8rem; }
-    h2 { font-size: 2rem; }
-    
-    .feature-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-    .feature-item.reverse {
-        flex-direction: column;
-    }
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* Simple hide for mobile, can be improved with JS */
-    .magic-steps, .footer-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-form {
-        flex-direction: column;
-        align-items: center;
-    }
-    .hero-form input {
-        width: 100%;
-        max-width: 400px;
-    }
-    .footer-grid {
-        text-align: center;
-    }
-}
+    <script src="script.js"></script>
+</body>
+</html>
