@@ -338,11 +338,14 @@ section {
     background-color: var(--light-bg);
 }
 
+.pricing-section h2 {
+    margin-bottom: 1rem; /* Reduced space below heading */
+}
+
 .pricing-subheading {
     text-align: center;
     color: var(--text-muted);
-    margin-top: -2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem; /* Increased space below subheading */
 }
 
 .pricing-grid {
