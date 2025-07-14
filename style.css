@@ -1,4 +1,4 @@
-* --- General Setup & Variables --- */
+/* --- General Setup & Variables --- */
 :root {
     --main-blue: #2274fc;
     --light-bg: #ffffff;
@@ -43,14 +43,20 @@ section {
     padding: 6rem 0;
 }
 
+/* --- Utility Classes --- */
+.text-blue {
+    color: var(--main-blue);
+}
+
+
 /* --- Buttons --- */
 .btn {
-    display: inline-flex; /* Use flexbox for alignment */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* Space between icon and text */
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    gap: 0.5rem;
+    padding: 0.8rem 1.75rem; /* Adjusted padding */
+    border-radius: 9999px; /* Fully rounded edges */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -66,7 +72,6 @@ section {
 .btn-primary:hover {
     opacity: 0.9;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(34, 116, 252, 0.3);
 }
 
 .btn-secondary {
@@ -84,21 +89,36 @@ section {
     font-size: 1.1rem;
 }
 
-/* New Google Button Style */
-.btn-google {
+/* --- Special Hero Buttons --- */
+.btn-hero-primary, .btn-hero-secondary {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    position: relative; /* For the pseudo-element border */
+    border: none; /* Remove the standard border */
+}
+
+.btn-hero-primary::before, .btn-hero-secondary::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 3px solid rgba(34, 116, 252, 0.2); /* Thick, low-opacity border */
+    border-radius: 9999px;
+    z-index: -1;
+}
+
+.btn-hero-primary {
+    background-color: var(--main-blue);
+    color: #fff;
+}
+
+.btn-hero-secondary {
     background-color: var(--light-bg);
     color: var(--text-dark);
-    border-color: var(--border-color);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.btn-google:hover {
-    background-color: var(--light-card);
-}
-
-.google-icon {
-    width: 20px;
-    height: 20px;
+    border: 1px solid var(--border-color); /* A subtle inner border */
 }
 
 
@@ -116,7 +136,7 @@ section {
 }
 
 .logo img {
-    height: 40px; /* Increased logo size */
+    height: 40px;
     width: auto;
 }
 
@@ -145,8 +165,7 @@ section {
 /* --- Hero Section --- */
 .hero-section {
     text-align: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding: 5rem 0; /* Reduced padding */
 }
 
 .hero-content h1 {
@@ -157,30 +176,13 @@ section {
     line-height: 1.3;
 }
 
-/* Styles for the heading underline */
-.heading-highlight {
-    position: relative;
-    display: inline-block;
-}
-
-.heading-underline {
-    position: absolute;
-    bottom: -15px; /* Adjust to position correctly */
-    left: 0;
-    width: 100%;
-    height: auto;
-    pointer-events: none; /* Prevents image from being clickable */
-}
-
-
 .hero-content .subtitle {
     font-size: 1.2rem;
     color: var(--text-muted);
     max-width: 700px;
-    margin: 2.5rem auto 2.5rem; /* Increased top margin */
+    margin: 1.5rem auto 2rem; /* Reduced margins */
 }
 
-/* New container for hero buttons */
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -190,7 +192,7 @@ section {
 
 /* --- How It Works Section --- */
 .magic-section {
-    background-color: var(--light-card); /* Light grey background */
+    background-color: var(--light-card);
 }
 
 .magic-steps {
@@ -260,7 +262,7 @@ section {
 
 /* --- Testimonials Section --- */
 .testimonials-section {
-    background-color: var(--light-card); /* Light grey background */
+    background-color: var(--light-card);
 }
 
 .testimonial-grid {
@@ -290,7 +292,7 @@ section {
 
 .faq-item {
     background-color: var(--light-bg);
-    border-radius: 8px;
+    border-radius: 12px; /* More rounded */
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
 }
@@ -324,7 +326,7 @@ section {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Adjust if answers are longer */
+    max-height: 200px;
 }
 
 .faq-item.active .faq-icon {
@@ -346,7 +348,7 @@ section {
 /* --- Footer --- */
 .main-footer {
     padding: 4rem 0 2rem;
-    background-color: var(--light-card); /* Light grey background */
+    background-color: var(--light-card);
     border-top: 1px solid var(--border-color);
 }
 
@@ -407,13 +409,14 @@ section {
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Simple hide for mobile, can be improved with JS */
+    .nav-links { display: none; }
     .magic-steps, .footer-grid {
         grid-template-columns: 1fr;
     }
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1.5rem; /* Increased gap for stacked buttons */
     }
     .hero-content h1 {
         font-size: 2.5rem;
