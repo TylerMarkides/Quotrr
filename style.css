@@ -55,7 +55,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.75rem; /* Adjusted padding */
+    padding: 0.8rem 1.75rem;
     border-radius: 9999px; /* Fully rounded edges */
     text-decoration: none;
     font-weight: 500;
@@ -82,11 +82,16 @@ section {
 
 .btn-secondary:hover {
     background-color: var(--light-card);
+    transform: translateY(-2px);
 }
 
 .btn-large {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
+}
+
+.btn-large:hover {
+    transform: translateY(-2px);
 }
 
 /* --- Special Hero Buttons --- */
@@ -95,7 +100,7 @@ section {
     font-size: 1.05rem;
     font-weight: 600;
     position: relative; /* For the pseudo-element border */
-    border: none; /* Remove the standard border */
+    border: none;
 }
 
 .btn-hero-primary::before, .btn-hero-secondary::before {
@@ -108,6 +113,7 @@ section {
     border: 3px solid rgba(34, 116, 252, 0.2); /* Thick, low-opacity border */
     border-radius: 9999px;
     z-index: -1;
+    transition: all 0.3s ease;
 }
 
 .btn-hero-primary {
@@ -118,7 +124,15 @@ section {
 .btn-hero-secondary {
     background-color: var(--light-bg);
     color: var(--text-dark);
-    border: 1px solid var(--border-color); /* A subtle inner border */
+    border: 1px solid var(--border-color);
+}
+
+.btn-hero-primary:hover, .btn-hero-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-hero-primary:hover::before, .btn-hero-secondary:hover::before {
+    transform: scale(1.05);
 }
 
 
@@ -127,6 +141,9 @@ section {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--light-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .main-nav {
@@ -162,14 +179,37 @@ section {
     gap: 1rem;
 }
 
+.mobile-menu-button {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+}
+
+.menu-icon-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+
 /* --- Hero Section --- */
 .hero-section {
     text-align: center;
-    padding: 5rem 0; /* Reduced padding */
+    padding: 8rem 0; /* Increased padding to make it bigger */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem; /* Slightly larger font */
     max-width: 800px;
     margin: 0 auto;
     color: var(--text-dark);
@@ -180,7 +220,7 @@ section {
     font-size: 1.2rem;
     color: var(--text-muted);
     max-width: 700px;
-    margin: 1.5rem auto 2rem; /* Reduced margins */
+    margin: 1.5rem auto 2rem;
 }
 
 .hero-buttons {
@@ -292,7 +332,7 @@ section {
 
 .faq-item {
     background-color: var(--light-bg);
-    border-radius: 12px; /* More rounded */
+    border-radius: 12px;
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
 }
@@ -390,6 +430,19 @@ section {
     padding-top: 2rem;
 }
 
+/* --- Scroll Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     h1 { font-size: 2.8rem; }
@@ -410,13 +463,19 @@ section {
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
+    .nav-actions .btn-secondary { display: none; } /* Hide Sign In button */
+    .mobile-menu-button { display: block; } /* Show menu button */
+
     .magic-steps, .footer-grid {
         grid-template-columns: 1fr;
     }
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem; /* Increased gap for stacked buttons */
+        gap: 1.5rem;
+    }
+    .hero-buttons .btn-hero-secondary {
+        display: none; /* Hide How it works button on mobile */
     }
     .hero-content h1 {
         font-size: 2.5rem;
