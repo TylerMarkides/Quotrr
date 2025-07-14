@@ -8,15 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = item.querySelector('.faq-question');
 
         question.addEventListener('click', () => {
-            // Check if the clicked item is already active
             const isActive = item.classList.contains('active');
-
-            // First, close all other items
             faqItems.forEach(otherItem => {
                 otherItem.classList.remove('active');
             });
-
-            // If the clicked item was not active, open it
             if (!isActive) {
                 item.classList.add('active');
             }
@@ -25,13 +20,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Footer Year ---
-    // Find the element with the ID of "year"
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
-        // Get the current year
         const currentYear = new Date().getFullYear();
-        // Set the text of the span to the current year
         yearSpan.textContent = currentYear;
     }
+
+
+    // --- Scroll Reveal Functionality ---
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        for (let i = 0; i < revealElements.length; i++) {
+            const element = revealElements[i];
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 100; // Distance from bottom of viewport to trigger animation
+
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        }
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    
+    // Initial check on page load
+    revealOnScroll();
 
 });
