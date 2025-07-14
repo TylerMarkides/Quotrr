@@ -338,11 +338,18 @@ section {
     background-color: var(--light-bg);
 }
 
+.pricing-subheading {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    align-items: stretch; /* Make cards equal height */
+    align-items: center; /* Use center to align vertically */
 }
 
 .pricing-card {
@@ -354,22 +361,31 @@ section {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    height: 100%; /* Make cards fill the grid cell height */
 }
 
 .pricing-card.popular {
-    border-color: var(--main-blue);
-    border-width: 2px;
+    transform: scale(1.05); /* Make it slightly bigger */
+    border: none; /* Remove standard border to use pseudo-element */
 }
+
+.pricing-card.popular::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 3px solid rgba(34, 116, 252, 0.2);
+    border-radius: 20px; /* Match card's border-radius + border width */
+    z-index: -1;
+}
+
 
 .popular-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     background-color: var(--main-blue);
     color: #fff;
     padding: 0.25rem 0.75rem;
@@ -398,30 +414,53 @@ section {
 .plan-description {
     color: var(--text-muted);
     margin-bottom: 2rem;
-    min-height: 60px; /* Ensures alignment */
+    min-height: 60px;
 }
 
 .features-list {
     list-style: none;
     margin-bottom: 2rem;
+    padding-left: 0;
 }
 
 .features-list li {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
+    text-align: left;
 }
 
 .features-list li::before {
-    content: '✓';
-    color: var(--main-blue);
-    font-weight: 700;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://ik.imagekit.io/4xntngxeg/Quotrr%20(4).png?updatedAt=1752533812410');
+    background-size: contain;
+    background-repeat: no-repeat;
     margin-right: 0.75rem;
+    flex-shrink: 0;
 }
 
 .feature-highlight {
     font-weight: 700;
     color: var(--main-blue);
+}
+
+.btn-popular {
+    position: relative;
+}
+
+.btn-popular::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 3px solid rgba(34, 116, 252, 0.2);
+    border-radius: 9999px;
+    z-index: -1;
 }
 
 
@@ -551,6 +590,11 @@ section {
     
     .pricing-grid {
         grid-template-columns: 1fr;
+        gap: 3rem; /* Increased gap for stacked cards */
+    }
+
+    .pricing-card.popular {
+        transform: scale(1); /* Reset scale on smaller screens */
     }
 
     .feature-item {
