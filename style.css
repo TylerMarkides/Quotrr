@@ -339,20 +339,20 @@ section {
 }
 
 .pricing-section h2 {
-    margin-bottom: 1rem; /* Reduced space below heading */
+    margin-bottom: 1rem;
 }
 
 .pricing-subheading {
     text-align: center;
     color: var(--text-muted);
-    margin-bottom: 4rem; /* Increased space below subheading */
+    margin-bottom: 4rem;
 }
 
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    align-items: center; /* Use center to align vertically */
+    align-items: center;
 }
 
 .pricing-card {
@@ -364,12 +364,12 @@ section {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Make cards fill the grid cell height */
+    height: 100%;
 }
 
 .pricing-card.popular {
-    transform: scale(1.05); /* Make it slightly bigger */
-    border: none; /* Remove standard border to use pseudo-element */
+    transform: scale(1.05);
+    border: none;
 }
 
 .pricing-card.popular::before {
@@ -380,7 +380,7 @@ section {
     right: -4px;
     bottom: -4px;
     border: 3px solid rgba(34, 116, 252, 0.2);
-    border-radius: 20px; /* Match card's border-radius + border width */
+    border-radius: 20px;
     z-index: -1;
 }
 
@@ -519,14 +519,50 @@ section {
 
 /* --- Final CTA Section --- */
 .cta-section {
-    background-color: var(--text-dark);
+    background-color: transparent;
+    padding-bottom: 4rem; /* Add some space before footer */
+}
+
+.cta-box {
+    background-color: var(--main-blue);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.cta-section h2 {
-    color: var(--light-bg);
-    margin-bottom: 2rem;
+.cta-box h2 {
+    color: #fff;
+    margin-bottom: 1.5rem;
 }
+
+.btn-cta {
+    background-color: #fff;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    z-index: -1;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+}
+
 
 /* --- Footer --- */
 .main-footer {
@@ -593,11 +629,11 @@ section {
     
     .pricing-grid {
         grid-template-columns: 1fr;
-        gap: 3rem; /* Increased gap for stacked cards */
+        gap: 3rem;
     }
 
     .pricing-card.popular {
-        transform: scale(1); /* Reset scale on smaller screens */
+        transform: scale(1);
     }
 
     .feature-item {
@@ -615,8 +651,8 @@ section {
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .nav-actions .btn-secondary { display: none; } /* Hide Sign In button */
-    .mobile-menu-button { display: block; } /* Show menu button */
+    .nav-actions .btn-secondary { display: none; }
+    .mobile-menu-button { display: block; }
 
     .magic-steps, .footer-grid {
         grid-template-columns: 1fr;
@@ -627,9 +663,15 @@ section {
         gap: 1.5rem;
     }
     .hero-buttons .btn-hero-secondary {
-        display: none; /* Hide How it works button on mobile */
+        display: none;
     }
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+    .cta-box {
+        padding: 3rem 1.5rem;
+    }
+    .cta-box h2 {
+        font-size: 1.8rem;
     }
 }
