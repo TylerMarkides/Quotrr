@@ -60,7 +60,7 @@ section {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.8rem 1.75rem;
-    border-radius: 12px; /* Slightly less rounded */
+    border-radius: 9999px; /* More rounded */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -123,7 +123,7 @@ section {
     right: -4px;
     bottom: -4px;
     border: 3px solid rgba(34, 116, 252, 0.2); /* Thick, low-opacity border */
-    border-radius: 16px; /* Match button's new border-radius */
+    border-radius: 9999px;
     z-index: -1;
     transition: all 0.3s ease;
 }
@@ -159,11 +159,10 @@ section {
 .main-header {
     background-color: var(--light-bg);
     border-radius: 9999px; /* Bubble effect */
-    padding: 0.75rem 1rem; /* Increased padding to make it taller */
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-    border: 1px solid var(--border-color);
-    max-width: 1200px; /* Constrain width on desktop */
-    margin: 0 auto; /* Center the header */
+    padding: 0.75rem 1rem; /* Increased padding */
+    border: 1px solid var(--border-color); /* Thin border instead of shadow */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .main-nav {
@@ -196,11 +195,30 @@ section {
 
 .nav-actions {
     display: flex;
+    align-items: center; /* Align items vertically */
     gap: 1rem;
 }
 
 .mobile-menu-button {
-    display: none;
+    display: none; /* Hidden by default */
+    background-color: var(--light-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* Space between lines */
+}
+
+.menu-icon-line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--text-dark);
+    border-radius: 3px;
 }
 
 
@@ -208,8 +226,8 @@ section {
 .hero-section {
     position: relative; 
     text-align: center;
-    padding: 6rem 0; /* Adjusted padding */
-    min-height: 70vh;
+    padding: 6rem 0; /* Reduced padding */
+    min-height: auto; /* Let content define height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,7 +309,7 @@ section {
 
 .how-it-works-card {
     background-color: transparent;
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 .how-it-works-image {
@@ -704,7 +722,7 @@ section {
         gap: 3rem;
     }
     .how-it-works-card {
-        text-align: center;
+        text-align: left; /* Keep text aligned left on mobile */
     }
 
     .pricing-grid {
@@ -740,13 +758,14 @@ section {
     .logo img {
         height: 30px; /* Smaller logo on mobile */
     }
-    .nav-links, .nav-actions .btn-secondary, .mobile-menu-button { 
+    .nav-links, .nav-actions .btn-secondary { 
         display: none; 
     }
+    .mobile-menu-button {
+        display: flex; /* Show on mobile */
+    }
     .nav-actions .btn-primary {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-        border-radius: 9999px; /* More rounded button on mobile */
+        display: none; /* Hide desktop Get Started button */
     }
 
     .footer-grid {
