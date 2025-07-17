@@ -159,9 +159,11 @@ section {
 .main-header {
     background-color: var(--light-bg);
     border-radius: 9999px; /* Bubble effect */
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem; /* Increased padding to make it taller */
     box-shadow: 0 5px 25px rgba(0,0,0,0.07);
     border: 1px solid var(--border-color);
+    max-width: 1200px; /* Constrain width on desktop */
+    margin: 0 auto; /* Center the header */
 }
 
 .main-nav {
@@ -289,7 +291,7 @@ section {
 
 .how-it-works-card {
     background-color: transparent;
-    text-align: left;
+    text-align: left; /* Align text to the left */
 }
 
 .how-it-works-image {
@@ -728,15 +730,23 @@ section {
 }
 
 @media (max-width: 768px) {
-    .nav-links, .nav-actions .btn-secondary, .mobile-menu-button { 
-        display: none; 
+    .header-container {
+        padding: 0.75rem;
     }
     .main-header {
-        padding: 0.5rem;
+        border-radius: 16px; /* Less rounded on mobile */
+        padding: 0.5rem 1rem;
+    }
+    .logo img {
+        height: 30px; /* Smaller logo on mobile */
+    }
+    .nav-links, .nav-actions .btn-secondary, .mobile-menu-button { 
+        display: none; 
     }
     .nav-actions .btn-primary {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
+        border-radius: 9999px; /* More rounded button on mobile */
     }
 
     .footer-grid {
