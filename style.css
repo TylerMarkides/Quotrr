@@ -215,7 +215,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--light-bg); /* Fallback for mobile */
+    background-color: var(--light-bg);
 }
 
 .hero-content {
@@ -669,16 +669,6 @@ section {
 
 
 /* --- Responsive Design --- */
-@media (min-width: 769px) {
-    .hero-section {
-        background-image: url('https://ik.imagekit.io/4xntngxeg/Untitled%20design%20(1).png?updatedAt=1752761641532');
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-}
-
-
 @media (max-width: 992px) {
     h1 { font-size: 2.8rem; }
     h2 { font-size: 2rem; }
