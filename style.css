@@ -270,7 +270,7 @@ section {
 .hero-section {
     position: relative; 
     text-align: center;
-    padding: 6rem 0; /* Reduced padding */
+    padding: 6rem 0 8rem; /* Adjusted padding */
     min-height: auto;
     display: flex;
     align-items: center;
