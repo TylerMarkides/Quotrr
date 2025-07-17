@@ -159,7 +159,7 @@ section {
 .main-header {
     background-color: var(--light-bg);
     border-radius: 9999px; /* Bubble effect */
-    padding: 0.75rem 1rem; /* Increased padding to make it taller */
+    padding: 0.75rem 1rem; /* Increased padding */
     border: 1px solid var(--border-color); /* Thin border instead of shadow */
     max-width: 1200px;
     margin: 0 auto;
@@ -227,6 +227,7 @@ section {
     position: relative; 
     text-align: center;
     padding: 8rem 0; /* Increased size */
+    padding-top: 6rem; /* Reduced top padding */
     min-height: auto;
     display: flex;
     align-items: center;
@@ -763,9 +764,15 @@ section {
     }
     .nav-actions .btn-primary {
         display: inline-flex; /* Show Get Started button */
+        font-size: 0.8rem; /* Smaller text */
+        padding: 0.5rem 1rem; /* Smaller padding */
     }
     .mobile-menu-button {
         display: flex; /* Show on mobile */
+    }
+
+    .hero-section {
+        padding-top: 4rem; /* Reduced top padding on mobile */
     }
 
     .footer-grid {
