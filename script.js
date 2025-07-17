@@ -48,4 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check on page load
     revealOnScroll();
 
+    // --- Mobile Menu Functionality ---
+    const menuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+
 });
