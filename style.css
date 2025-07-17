@@ -208,31 +208,18 @@ section {
 
 /* --- Hero Section --- */
 .hero-section {
-    position: relative; /* Needed for the background image */
+    position: relative; 
     text-align: center;
     padding: 8rem 0;
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Prevents background from spilling out */
-}
-
-.hero-background {
-    display: none; /* Hidden on mobile by default */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://ik.imagekit.io/4xntngxeg/Untitled%20design%20(1).png?updatedAt=1752761641532');
-    background-size: cover;
-    background-position: center;
-    z-index: -1; /* Puts it behind the content */
+    background-color: var(--light-bg); /* Fallback for mobile */
 }
 
 .hero-content {
-    position: relative; /* Ensures content stays on top */
+    position: relative;
     z-index: 1;
 }
 
@@ -683,8 +670,10 @@ section {
 
 /* --- Responsive Design --- */
 @media (min-width: 769px) {
-    .hero-background {
-        display: block; /* Show background on desktop */
+    .hero-section {
+        background-image: url('https://ik.imagekit.io/4xntngxeg/Untitled%20design%20(1).png?updatedAt=1752761641532');
+        background-size: cover;
+        background-position: center center;
     }
 }
 
