@@ -14,35 +14,36 @@
 <body>
 
     <!-- Header and Navigation -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="main-nav">
-                <a href="#" class="logo">
-                    <img src="https://ik.imagekit.io/4xntngxeg/Quotrr%20(1).png?updatedAt=1752338505979" alt="Quotrr Logo">
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#">How it works</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Features</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <a href="#" class="btn btn-secondary">Sign In</a>
-                    <a href="#" class="btn btn-primary">Get Started Free</a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button">
-                    <span class="menu-icon-line"></span>
-                    <span class="menu-icon-line"></span>
-                    <span class="menu-icon-line"></span>
-                </button>
-            </nav>
-        </div>
-    </header>
+    <div class="header-container">
+        <header class="main-header">
+            <div class="container">
+                <nav class="main-nav">
+                    <a href="#" class="logo">
+                        <img src="https://ik.imagekit.io/4xntngxeg/Quotrr%20(1).png?updatedAt=1752338505979" alt="Quotrr Logo">
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="#how-it-works">How it works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="#" class="btn btn-secondary">Sign In</a>
+                        <a href="#" class="btn btn-primary">Get Started Free</a>
+                    </div>
+                    <!-- This button is now hidden on mobile via CSS -->
+                    <button class="mobile-menu-button">
+                        <span class="menu-icon-line"></span>
+                        <span class="menu-icon-line"></span>
+                        <span class="menu-icon-line"></span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+    </div>
 
     <main>
         <!-- Hero Section -->
         <section class="hero-section reveal">
-            <!-- The background image is now applied directly to this section via CSS -->
             <div class="container">
                 <div class="hero-content">
                     <h1>
@@ -55,7 +56,7 @@
                     </p>
                     <!-- Updated Button Section -->
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-hero-secondary">How it works</a>
+                        <a href="#how-it-works" class="btn btn-hero-secondary">How it works</a>
                         <a href="#" class="btn btn-hero-primary">Get Started for Free →</a>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
         </section>
 
         <!-- NEW How It Works Section -->
-        <section class="how-it-works-section reveal">
+        <section id="how-it-works" class="how-it-works-section reveal">
             <div class="container">
                 <div class="how-it-works-header">
                     <div class="header-left">
@@ -100,7 +101,7 @@
 
 
         <!-- Features Section -->
-        <section class="features-section">
+        <section id="features" class="features-section">
             <div class="container">
                 <h2 class="reveal">Everything you need to quote faster.</h2>
                 <div class="feature-item reveal">
@@ -139,23 +140,32 @@
                 <h2>Why businesses love Quotrr</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial-card">
-                        <p>"Quotrr has cut my admin time in half. I can send quotes from my phone in minutes instead of hours at a desk. It's been a total game-changer for my plumbing business."</p>
-                        <div class="author">- John D., Plumber</div>
+                        <p>"Quotrr has cut our quoting time in half. Clients fill everything in, we just review and send. It’s quick, easy and saves us chasing people."</p>
+                        <div class="author">
+                            - Jay S
+                            <svg class="verified-tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+                        </div>
                     </div>
                     <div class="testimonial-card">
-                        <p>"The AI is surprisingly accurate. Customers get instant, professional quotes, which has massively improved our conversion rate. We look more professional and win more jobs."</p>
-                        <div class="author">- Maria G., Landscaping Services</div>
+                        <p>"It makes us look more professional and saves loads of time. Clients love how fast they get their quotes, and we only deal with serious leads now."</p>
+                         <div class="author">
+                            - Amelia T
+                            <svg class="verified-tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+                        </div>
                     </div>
                     <div class="testimonial-card">
-                        <p>"I love that it gives customers two ways to get a quote. Some use the AI, some use the builder. It's flexible and has made our quoting process so much more efficient."</p>
-                        <div class="author">- David L., Electrician</div>
+                        <p>"Super simple to use and has genuinely brought in more work. We’re no longer wasting time on back-and-forth messages."</p>
+                         <div class="author">
+                            - Ben M
+                            <svg class="verified-tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section class="pricing-section reveal">
+        <section id="pricing" class="pricing-section reveal">
             <div class="container">
                 <h2>Choose the right plan for you</h2>
                 <p class="pricing-subheading"><b>Cancel anytime.</b> No questions asked!</p>
