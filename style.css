@@ -14,6 +14,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--light-bg);
@@ -56,7 +60,7 @@ section {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.8rem 1.75rem;
-    border-radius: 9999px; /* Fully rounded edges */
+    border-radius: 12px; /* Slightly less rounded */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -119,7 +123,7 @@ section {
     right: -4px;
     bottom: -4px;
     border: 3px solid rgba(34, 116, 252, 0.2); /* Thick, low-opacity border */
-    border-radius: 9999px;
+    border-radius: 16px; /* Match button's new border-radius */
     z-index: -1;
     transition: all 0.3s ease;
 }
@@ -145,13 +149,19 @@ section {
 
 
 /* --- Header & Navigation --- */
-.main-header {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--light-bg);
+.header-container {
+    padding: 1.5rem 1rem; /* Creates space for the floating header */
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.main-header {
+    background-color: var(--light-bg);
+    border-radius: 9999px; /* Bubble effect */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    border: 1px solid var(--border-color);
 }
 
 .main-nav {
@@ -188,21 +198,7 @@ section {
 }
 
 .mobile-menu-button {
-    display: none; /* Hidden by default */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 101;
-}
-
-.menu-icon-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-dark);
-    margin: 5px 0;
-    border-radius: 3px;
+    display: none;
 }
 
 
@@ -210,8 +206,8 @@ section {
 .hero-section {
     position: relative; 
     text-align: center;
-    padding: 8rem 0;
-    min-height: 80vh;
+    padding: 6rem 0; /* Adjusted padding */
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -376,6 +372,15 @@ section {
     margin-top: 1.5rem;
     font-weight: 600;
     color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.verified-tick {
+    width: 18px;
+    height: 18px;
+    color: var(--main-blue);
 }
 
 
@@ -514,6 +519,10 @@ section {
 
 
 /* --- FAQ Section --- */
+.faq-section {
+    padding-bottom: 4rem; /* Adjusted spacing */
+}
+
 .faq-container {
     max-width: 700px;
     margin: 0 auto;
@@ -566,7 +575,8 @@ section {
 /* --- Final CTA Section --- */
 .cta-section {
     background-color: transparent;
-    padding-bottom: 4rem; /* Add some space before footer */
+    padding-top: 4rem; /* Adjusted spacing */
+    padding-bottom: 4rem;
 }
 
 .cta-box {
@@ -601,7 +611,7 @@ section {
     right: -4px;
     bottom: -4px;
     border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 9999px;
+    border-radius: 16px; /* Match button's new border-radius */
     z-index: -1;
 }
 
@@ -670,6 +680,9 @@ section {
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
+    .header-container {
+        padding: 1rem;
+    }
     h1 { font-size: 2.8rem; }
     h2 { font-size: 2rem; }
     
@@ -715,9 +728,16 @@ section {
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .nav-actions .btn-secondary { display: none; }
-    .mobile-menu-button { display: block; }
+    .nav-links, .nav-actions .btn-secondary, .mobile-menu-button { 
+        display: none; 
+    }
+    .main-header {
+        padding: 0.5rem;
+    }
+    .nav-actions .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
 
     .footer-grid {
         grid-template-columns: 1fr;
